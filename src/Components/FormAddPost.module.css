@@ -1,0 +1,15 @@
+.frame_post_li {
+  margin: 10px 15px 10px 15px;
+  padding: 10px 10px 10px 10px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: solid;
+}
+
+.frame_post_li_title {
+  color: red;
+}
+
+.frame_post_li_body {
+  color: rgb(0, 60, 255);
+}

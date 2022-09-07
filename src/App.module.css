@@ -1,0 +1,22 @@
+.elem_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_click {
+  display: inline-block;
+  right: 1150px;
+  width: 150px;
+  height: 30px;
+  margin: 15px 15px 15px 950px;
+  background-color: #0aeb42;
+  border: none;
+  font-size: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button_send:hover {
+  background-color: rgb(137, 238, 4);
+}
