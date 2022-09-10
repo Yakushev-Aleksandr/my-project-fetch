@@ -1,0 +1,29 @@
+.about_title {
+  margin-top: 10px;
+  font-size: large;
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+}
+
+.about_text {
+  padding: 10px 10px 10px 10px;
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  min-height: 300px;
+  border-radius: 15px;
+  border: solid red 0.1px;
+  background-color: aqua;
+}
+
+.about_button {
+  display: block;
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  margin: 0 auto;
+}

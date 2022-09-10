@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
-import Post from "./Components/Post";
-
-import {
-  useQuery,
-  QueryClientProvider,
-  QueryClient,
-} from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
+import react from "./img/react.png";
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Post />
-    </QueryClientProvider>
+    <div
+      style={{
+        marginTop: "20",
+      }}
+    >
+      <img
+        src={react}
+        alt="test"
+        style={{
+          display: "block",
+          marginTop: "20",
+          margin: "auto",
+        }}
+      />
+    </div>
   );
 }
 

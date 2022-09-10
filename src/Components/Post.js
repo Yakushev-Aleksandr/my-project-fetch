@@ -4,6 +4,7 @@ import styles from "./Post.module.css";
 import React, { useEffect, useState } from "react";
 import PostAndComents from "./PostAndComents"; // Компонент что выводит все посты
 import FormAddPost from "./FormAddPost"; // Компонент для добавления нового поста
+import { Link } from "react-router-dom";
 
 import {
   useQuery,
@@ -89,6 +90,11 @@ const Post = (props) => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <div className={styles.frame_text}>POST</div>
+      <Link to="/">
+        <button className={styles.frame_button}> HOME </button>
+      </Link>
+
       <div className={styles.frame_post}>
         <button onClick={addNewPostHandler}> Добавить новый пост </button>
         {stateNewComents && (

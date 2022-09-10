@@ -1,0 +1,29 @@
+.contacts_title {
+  margin-top: 10px;
+  font-size: large;
+  color: rgb(255, 60, 0);
+  text-align: center;
+  font-weight: bold;
+}
+
+.contacts_text {
+  padding: 10px 10px 10px 10px;
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  min-height: 300px;
+  border-radius: 15px;
+  border: solid rgb(76, 0, 255) 0.1px;
+  background-color: rgb(151, 229, 229);
+}
+
+.contacts_button {
+  display: block;
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  margin: 0 auto;
+}

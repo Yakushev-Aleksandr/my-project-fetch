@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styles from "./PostAndComents.module.css";
 import PostItem from "./PostItem";
 import Coments from "./Coments";
+import { Outlet } from "react-router-dom";
 
 const PostAndComents = (props) => {
   const [sendConemts, setSendConemts] = useState(); // Передается значение ID по которому была нажата кнопка Show Comment
@@ -28,6 +29,7 @@ const PostAndComents = (props) => {
       {switchPostConemts && (
         <Coments id={props.id} onSendsComent={sendConemts} />
       )}
+      <Outlet />
     </div>
   );
 };

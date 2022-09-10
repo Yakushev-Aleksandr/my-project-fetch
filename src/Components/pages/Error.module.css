@@ -1,0 +1,30 @@
+.error_title {
+  margin-top: 10px;
+  font-size: large;
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error_text {
+  padding: 10px 10px 10px 10px;
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  min-height: auto;
+  border-radius: 15px;
+  border: solid red 0.1px;
+  background-color: aqua;
+  text-align: center;
+}
+
+.error_button {
+  display: block;
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  margin: 20px auto;
+}

@@ -1,7 +1,7 @@
 // Компонент в котором вводится новый пост
 import styles from "./FormAddPost.module.css";
 import React, { useState } from "react";
-import { Identity } from "@mui/base";
+/* import { Identity } from "@mui/base"; */
 
 const FormAddPost = (props) => {
   const [statePostTextArea, setStatePostTextArea] = useState(); // Состояние поля TextArea

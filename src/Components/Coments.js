@@ -1,16 +1,11 @@
 // в этом компоненте происходит логика добавления новых коментариев к посту
 
 import styles from "./Coments.module.css";
-import {
-  useQuery,
-  useMutation,
-  QueryClientProvider,
-  QueryClient,
-} from "@tanstack/react-query";
+import { useQuery, useMutation, QueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import ComentItem from "./ComentItem";
 
-const queryClient = new QueryClient();
+/* const queryClient = new QueryClient(); */
 
 // Загрузка коментов
 
@@ -23,7 +18,7 @@ const Coments = (props) => {
   const [stateComentTextArea, setStateComentTextArea] = useState(""); // Состояние поля TextArea
 
   // Загрузка коментариев. По "props.onSendsComent" вычисляется ID передается с PostAndComents
-  const { isLoading, isError, data, refetch } = useQuery(["users"], () => [
+  const { isLoading } = useQuery(["users"], () => [
     fetch(
       `https://jsonplaceholder.typicode.com/posts/${props.onSendsComent}/comments`
     )
@@ -85,7 +80,7 @@ const Coments = (props) => {
   ));
 
   return (
-    <div client={queryClient}>
+    <div /* client={queryClient} */>
       <div className={styles.frame_coments}>
         {comentItem}
 
