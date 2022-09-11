@@ -1,19 +1,23 @@
 import styles from "./About.module.css";
 
 import { Link } from "react-router-dom";
+import { Button, Typography, Card, Box } from "@mui/material";
 
 const About = () => {
   return (
-    <div>
-      <div className={styles.about_title}>ABOUT</div>
-      <div className={styles.about_text}>
-        Мы команда профессионалов. Работаем над React Routerom, у нас все очень
-        круто получается!
-      </div>
+    <Box sx={{ display: "block", marginTop: "35px" }}>
+      <Typography
+        variant="h3"
+        component="div"
+        sx={{ color: "blue", textAlign: "center" }}
+      >
+        ABOUT
+      </Typography>
+      <Typography variant="h4">Сдесь должен быть текст о нас...</Typography>
       <Link to="/">
-        <button className={styles.about_button}> HOME </button>
+        <Button variant="outlined"> HOME </Button>
       </Link>
-    </div>
+    </Box>
   );
 };
 

@@ -1,7 +1,15 @@
 // Компонент в котором вводится новый пост
-import styles from "./FormAddPost.module.css";
+/* import styles from "./FormAddPost.module.css"; */
 import React, { useState } from "react";
-/* import { Identity } from "@mui/base"; */
+import {
+  Box,
+  Typography,
+  CardContent,
+  TextField,
+  Card,
+  CardActions,
+  Button,
+} from "@mui/material";
 
 const FormAddPost = (props) => {
   const [statePostTextArea, setStatePostTextArea] = useState(); // Состояние поля TextArea
@@ -28,19 +36,56 @@ const FormAddPost = (props) => {
   };
 
   return (
-    <div className={styles.frame_post_li}>
-      Напишите свой пост
-      <form action="" onSubmit={sendPostHandler}>
-        <textarea
-          onChange={onAddNewPostHandler}
-          value={statePostTextArea}
-          cols="40"
-          rows="5"
-        ></textarea>
-        <button> Add New Post </button>
-      </form>
-      <button onClick={props.stateNewComents}>Closed Forma</button>
-    </div>
+    <Box
+      sx={{
+        minWidth: 275,
+        margin: "15px 15px 0 15px",
+        boxShadow: "5px 5px 2px 1px rgba(22, 84, 5, 0.2)",
+      }}
+    >
+      <Card variant="outlined">
+        <CardContent>
+          <Typography> Напишите свой пост</Typography>
+        </CardContent>
+        <form
+          action=""
+          onSubmit={sendPostHandler}
+          style={{ padding: "0 15px 0 15px" }}
+        >
+          <TextField
+            id="outlined-multiline-static"
+            label="Add new post"
+            multiline
+            onChange={onAddNewPostHandler}
+            value={statePostTextArea}
+            sx={{
+              width: "100%",
+              margin: "15px 0px 15px 0px",
+              boxShadow: "5px 5px 2px 1px rgba(22, 84, 5, 0.2)",
+            }}
+            rows={5}
+          ></TextField>
+          <CardActions>
+            <Button
+              variant="contained"
+              sx={{ backgroundColor: "green" }}
+              onClick={sendPostHandler}
+            >
+              Add New Post
+            </Button>
+          </CardActions>
+        </form>
+        <CardActions>
+          <Button
+            onClick={props.stateNewComents}
+            variant="contained"
+            sx={{ backgroundColor: "red" }}
+          >
+            Closed Forma
+          </Button>
+        </CardActions>
+      </Card>
+    </Box>
   );
 };
 

@@ -1,23 +1,23 @@
-import styles from "./PostItem.module.css";
+/* import styles from "./PostItem.module.css"; */
 import { Link } from "react-router-dom";
-
+import { Box, Typography, CardContent /* , Link  */ } from "@mui/material";
 const PostItem = (props) => {
   return (
-    <div>
-      <li>
+    <Box sx={{ minWidth: 275 }}>
+      <CardContent>
         <Link to={`/post/UserId/${props.item.userId}`}>
           userId нашего пользователя: "{props.item.userId}"
         </Link>
 
-        <div id={props.item.id}> id = {props.item.id}</div>
-        <div className={styles.frame_post_li_title}>
-          title ={props.item.title}
-        </div>
-        <div className={styles.frame_post_li_body}>
-          body = {props.item.body}
-        </div>
-      </li>
-    </div>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary" id={props.item.id}>
+          id: "{props.item.id}"
+        </Typography>
+        <Typography variant="h5" component="div">
+          {props.item.title}
+        </Typography>
+        <Typography variant="body2">{props.item.body}</Typography>
+      </CardContent>
+    </Box>
   );
 };
 
