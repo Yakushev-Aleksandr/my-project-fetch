@@ -4,10 +4,11 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
-import styles from "./AllUserId.module.css";
+/* import styles from "./AllUserId.module.css"; */
 import UserIdItems from "./UserIdItems";
-
 import { useParams } from "react-router-dom";
+import { Card } from "@mui/material";
+import CircularStatic from "./MuiElements/CircularStatic";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +38,11 @@ const AllUserId = () => {
   );
 
   if (isLoading) {
-    return <span>ЖДИ...</span>;
+    return (
+      <div>
+        <CircularStatic />
+      </div>
+    );
   }
 
   const userIdItem = userIdshow.map((item) => (
@@ -46,7 +51,7 @@ const AllUserId = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className={styles.frame_AllUserId}>{userIdItem}</div>
+      <Card sx={{ mt: "15px" }}> {userIdItem}</Card>
     </QueryClientProvider>
   );
 };

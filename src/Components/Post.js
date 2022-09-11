@@ -2,9 +2,11 @@
 
 import styles from "./Post.module.css";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button, Typography } from "@mui/material";
 import PostAndComents from "./PostAndComents"; // Компонент что выводит все посты
 import FormAddPost from "./FormAddPost"; // Компонент для добавления нового поста
-import { Link } from "react-router-dom";
+import CircularStatic from "./MuiElements/CircularStatic";
 
 import {
   useQuery,
@@ -60,7 +62,11 @@ const Post = (props) => {
   });
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return (
+      <div>
+        <CircularStatic />
+      </div>
+    );
   }
 
   // Кнопка переключения состояния для ОТОБРАЖЕНИЯ поля ввода Нового поста
@@ -80,23 +86,28 @@ const Post = (props) => {
 
   // Компонент отображающий все посты
   const allPostAndComents = posts.map((item) => (
-    <PostAndComents
-      key={item.id}
-      item={item}
-      id={item.id}
-      className={styles.frame_li}
-    />
+    <PostAndComents key={item.id} item={item} id={item.id} />
   ));
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className={styles.frame_text}>POST</div>
-      <Link to="/">
-        <button className={styles.frame_button}> HOME </button>
-      </Link>
+      <Typography
+        variant="h3"
+        component="div"
+        sx={{ color: "green", textAlign: "center" }}
+      >
+        POST
+      </Typography>
 
-      <div className={styles.frame_post}>
-        <button onClick={addNewPostHandler}> Добавить новый пост </button>
+      <div>
+        <Button
+          onClick={addNewPostHandler}
+          variant="contained"
+          color="success"
+          sx={{ margin: "15px 15px 0 15px" }}
+        >
+          Add new post
+        </Button>
         {stateNewComents && (
           <FormAddPost
             stateNewComents={setStateNewComentsHandlers}

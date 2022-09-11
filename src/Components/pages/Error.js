@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
+import { Button, Typography, Card, Box } from "@mui/material";
 import styles from "./Error.module.css";
 
 const Error = () => {
   return (
-    <div>
-      <div className={styles.error_title}>ERROR</div>
-      <div className={styles.error_text}>
-        Вы перешли на несуществующую страницу. Вернитесь назад нажавши эту
-        кнопку
+    <Box sx={{ display: "block", marginTop: "35px" }}>
+      <Typography
+        variant="h3"
+        component="div"
+        sx={{ color: "red", textAlign: "center" }}
+      >
+        ERROR
+      </Typography>
+
+      <Typography variant="h4">
+        Вы перешли на несуществующую страницу. Вернитесь назад нажавши на эту
+        кнопку <span> </span>
         <Link to="/">
-          <button className={styles.error_button}> HOME </button>
+          <Button variant="outlined"> HOME </Button>
         </Link>
-      </div>
-    </div>
+      </Typography>
+    </Box>
   );
 };
 

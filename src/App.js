@@ -1,10 +1,11 @@
 import react from "./img/react.png";
+import { Box } from "@mui/material";
 
 function App() {
   return (
-    <div
+    <Box
       style={{
-        marginTop: "20",
+        marginTop: "20px",
       }}
     >
       <img
@@ -12,11 +13,10 @@ function App() {
         alt="test"
         style={{
           display: "block",
-          marginTop: "20",
           margin: "auto",
         }}
       />
-    </div>
+    </Box>
   );
 }
 

@@ -1,11 +1,18 @@
 // в этом компоненте происходит логика добавления новых коментариев к посту
 
-import styles from "./Coments.module.css";
+/* import styles from "./Coments.module.css"; */
 import { useQuery, useMutation, QueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  CardContent,
+  TextField,
+  Card,
+  CardActions,
+  Button,
+} from "@mui/material";
 import ComentItem from "./ComentItem";
-
-/* const queryClient = new QueryClient(); */
 
 // Загрузка коментов
 
@@ -80,8 +87,12 @@ const Coments = (props) => {
   ));
 
   return (
-    <div /* client={queryClient} */>
-      <div className={styles.frame_coments}>
+    <Box
+      sx={{
+        minWidth: 275,
+      }}
+    >
+      <Card variant="outlined">
         {comentItem}
 
         <form
@@ -89,17 +100,32 @@ const Coments = (props) => {
           value={stateComentTextArea}
           id={props.id}
         >
-          <textarea
+          <TextField
             onChange={onChangeHandler}
             value={stateComentTextArea}
             id={props.id}
-            cols="40"
-            rows="5"
-          ></textarea>
-          <button type="submit"> Sends coment </button>
+            id="outlined-multiline-static"
+            label="Add new comment"
+            multiline
+            sx={{
+              width: "calc(100% - 30px)",
+              margin: "15px 0px 15px 15px",
+              boxShadow: "5px 5px 2px 1px rgba(216, 250, 8, 0.2)",
+            }}
+            rows={5}
+          ></TextField>
+          <CardActions>
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ backgroundColor: "green" }}
+            >
+              Send coment
+            </Button>
+          </CardActions>
         </form>
-      </div>
-    </div>
+      </Card>
+    </Box>
   );
 };
 
